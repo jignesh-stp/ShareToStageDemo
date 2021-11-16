@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App in meeting - Stage View</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://statics.teams.cdn.office.net/sdk/v1.11.0/js/MicrosoftTeams.min.js" integrity="sha384-SCVF3m7OvDKnfAilUzYn2yozEvBeP8n/Oq0yTH8VUI70J4AzrqR70jzjdQ6DI8s2" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: cornsilk;">
+  <button onclick="getAppContentStageSharingState()">
+    <span>Get App Content Stage Sharing</span>
+    <br/>
+    <span>State</span>
+  </button>
+  <br/>
+  <br/>
+  <button onclick="getAppContentStageSharingCapabilities()" >
+    <span>Get App Content Stage Sharing</span>
+    <br/>
+    <span>Capabilities</span>
+  </button>
+  <br/>
+  <br/>
+  <button onclick="shareAppContentToStage()" >
+    <span>Share App Content To</span>
+    <br/>
+    <span>Stage</span>
+  </button>
+
+  <script>
+    microsoftTeams.initialize();
+
+    const shareAppContentToStage = () => {
+      appContentUrl = "https://www.bing.com";
+      microsoftTeams.meeting.shareAppContentToStage((err, result)=>{
+        if(result){
+          console.log(result);
+        }
+
+        if(err) {
+          console.log(err);
+        }
+
+      }, appContentUrl);
+    };
+
+    const getAppContentStageSharingCapabilities = () => {
+
+      microsoftTeams.meeting.getAppContentStageSharingCapabilities((err, result)=>{
+        if(result){
+          console.log(result);
+        }
+
+        if(err) {
+          console.log(err);
+        }
+
+      });
+    };
+
+    const getAppContentStageSharingState = () => {
+
+      microsoftTeams.meeting.getAppContentStageSharingState((err, result)=>{
+        if(result){
+          console.log(result);
+        }
+
+        if(err) {
+          console.log(err);
+        }
+
+      });
+    };
+
+  </script>
+</body>
+
+</html>
