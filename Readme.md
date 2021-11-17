@@ -10,7 +10,7 @@
 -  Clone the repository
 
     ```bash
-    git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
+    git clone https://github.com/jignesh-stp/ShareToStageDemo.git
     ```
 
 - In a terminal, navigate to cloned repo
@@ -36,7 +36,7 @@
     npm start
     ```
 
-- Zip the contents of `Manifest` folder into a `manifest.zip`, and use the `manifest.zip` to deploy in app store or add to Teams as in step 4.
+- Zip the contents of `Manifest` folder into a `manifest.zip`
 
 - Upload the manifest.zip to Teams (in the Apps view click "Upload a custom app")
    - Go to Microsoft Teams. From the lower left corner, select Apps
